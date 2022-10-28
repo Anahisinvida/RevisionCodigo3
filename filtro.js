@@ -1,4 +1,5 @@
 // Tenemos un li de productos
+console.log("probando");
 
 const productos = [
   {nombre: "Zapato negro", tipo: "zapato", color: "negro", img: "./taco-negro.jpg"},
@@ -8,14 +9,19 @@ const productos = [
   {nombre: "Zapato rojo", tipo: "zapato", color: "rojo", img: "./zapato-rojo.jpg"}
 ]
 
-const li = document.getElementsByName("lista-de-productos")
-const $i = document.querySelector('.input');
+// siento que aquí se tiene que escribir una función porque 
+// es el error que me marca en la consola, pero sí te soy honesta, no la sé escribir. 
+
+const li = document.getElementsByName("lista-de-productos");
+const i = document.querySelector('.input');
+
+
 
 for (let i = 0; i < productos.length; i++) {
   var d = document.createElement("div")
   d.classList.add("producto")
 
-  var ti = document.createElement("p")
+  var titulo = document.createElement("p")
   ti.classList.add("titulo")
   ti.textContent = productos[i].nombre
   
@@ -36,9 +42,9 @@ botonDeFiltro.onclick = function() {
     li.removeChild(li.firstChild);
   }
 
-  const texto = $i.value;
+  const texto = i.value;
   console.log(texto);
-  const productosFiltrados = filtrado(productos, texto );
+  const productosFiltrados = filtrado(productos, texto);
 
   for (let i = 0; i < productosFiltrados.length; i++) {
     var d = document.createElement("div")
